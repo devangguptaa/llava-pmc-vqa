@@ -55,6 +55,8 @@ def evaluate(pred_json_path):
 
         if gt is None or str(gt).strip() == "":
             continue
+        if pred is None or str(pred).strip() == "":
+            continue
 
         total += 1
 
