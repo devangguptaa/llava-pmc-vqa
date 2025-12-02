@@ -146,15 +146,26 @@ def evaluate_with_judge(pred_json_path, model, out_path):
             if res is None:
                 continue
 
+            # print(
+            #     f"\nID: {res['id']}"
+            #     f"GT: {res['gt_answer']}"
+            #     f"Pred: {res['prediction']}"
+            #     f"Verdict: {res['verdict']}"
+            # )
+
             results.append(res)
             total += 1
             if res["verdict"] == "correct":
                 correct += 1
             else:
                 incorrect += 1
+            
+            if total % 150 == 0:
+                tqdm.write(f"accuracy so far: {correct}/{total} = {correct/total:.4f}")
+
 
     # write summary to file
-    with open("llm_judge_eval_results.txt", "w") as f:
+    with open("llm_judge_epoch1_eval_results.txt", "w") as f:
         f.write(f"Total evaluated: {total}\n")
         f.write(f"correct:   {correct}\n")
         f.write(f"incorrect: {incorrect}\n")
@@ -177,11 +188,12 @@ def evaluate_with_judge(pred_json_path, model, out_path):
 
 def main():
     evaluate_with_judge(
-        pred_json_path="pmc_vqa_llava_baseline_predictions.json",
+        # pred_json_path="pmc_vqa_llava_baseline_predictions.json",
+        pred_json_path="pmc_vqa_llava_epoch1_predictions.json",
         model=DEFAULT_MODEL,
-        out_path="llm_judge_per_example_results.json",
+        # out_path="llm_judge_per_example_results.json",
+        out_path="llm_judge_epoch1_per_example_results.json",
     )
-
 
 if __name__ == "__main__":
     main()
