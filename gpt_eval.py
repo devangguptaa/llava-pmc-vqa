@@ -165,7 +165,7 @@ def evaluate_with_judge(pred_json_path, model, out_path):
 
 
     # write summary to file
-    with open("llm_judge_epoch1_eval_results.txt", "w") as f:
+    with open("llm_judge_epoch2_eval_results.txt", "w") as f:
         f.write(f"Total evaluated: {total}\n")
         f.write(f"correct:   {correct}\n")
         f.write(f"incorrect: {incorrect}\n")
@@ -189,10 +189,10 @@ def evaluate_with_judge(pred_json_path, model, out_path):
 def main():
     evaluate_with_judge(
         # pred_json_path="pmc_vqa_llava_baseline_predictions.json",
-        pred_json_path="pmc_vqa_llava_epoch1_predictions.json",
+        pred_json_path="pmc_vqa_llava_epoch2_predictions.json",
         model=DEFAULT_MODEL,
         # out_path="llm_judge_per_example_results.json",
-        out_path="llm_judge_epoch1_per_example_results.json",
+        out_path="llm_judge_epoch2_per_example_results.json",
     )
 
 if __name__ == "__main__":

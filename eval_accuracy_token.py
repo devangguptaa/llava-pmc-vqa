@@ -78,7 +78,7 @@ def evaluate(pred_json_path):
     em  = em_count / total
     f1m = f1_sum / total
 
-    with open ("epoch1_eval_results.txt", "w") as f:
+    with open ("epoch2_eval_results.txt", "w") as f:
         f.write(f"Total examples evaluated: {total}\n")
         f.write(f"Exact Match (EM): {em_count} / {total} = {em:.4f}\n")
         f.write(f"Token-level F1 (mean): {f1m:.4f}\n")
@@ -89,5 +89,5 @@ def evaluate(pred_json_path):
 
 if __name__ == "__main__":
     # pred_json = "pmc_vqa_llava_baseline_predictions.json"
-    pred_json = "pmc_vqa_llava_epoch1_predictions.json"
+    pred_json = "pmc_vqa_llava_epoch2_predictions.json"
     evaluate(pred_json)

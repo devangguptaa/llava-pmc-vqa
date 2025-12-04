@@ -1,0 +1,3 @@
+Total examples evaluated: 46617
+Exact Match (EM): 669 / 46617 = 0.0144
+Token-level F1 (mean): 0.1275
