@@ -10,19 +10,22 @@ This repository contains preprocessing, inference, and evaluation scripts for ru
 
 PMC-VQA is a large scale MedVQA dataset with about 227k QA pairs over 149k images that span multiple imaging modalities and diseases.
 
-## Files Included 
+## Files Included
 
-├── baseline.py # baseline training and inference code
-├── preprocess.py # script to preprocess raw PMC-VQA data
-├── split_dataset.py # script to split dataset into train, val, test
-├── epoch1_inference.py # inference logic after first epoch
-├── eval_accuracy_token.py # token-level evaluation script
-├── gpt_eval.py # LLM-based evaluation script (optional)
-├── *.json # processed datasets, predictions, eval outputs
-├── *.txt / *.log / *.png # logs, training loss curves, evaluation results
+```
+├── baseline.py                 # baseline training and inference code
+├── preprocess.py               # script to preprocess raw PMC-VQA data
+├── split_dataset.py            # script to split dataset into train, val, test
+├── epoch1_inference.py         # inference logic after first epoch
+├── eval_accuracy_token.py      # token-level evaluation script
+├── gpt_eval.py                 # LLM-based evaluation script (optional)
+├── *.json                      # processed datasets, predictions, eval outputs
+├── *.txt / *.log / *.png       # logs, training loss curves, evaluation results
 ├── .gitignore
-├── .gitattributes # version control configuration
-└── README.md # project documentation
+├── .gitattributes              # version control configuration
+└── README.md                   # project documentation
+```
+
 
 ## 1. Environment and Dependencies
 
